@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maquillage Beauty — Arima, Trinidad &amp; Tobago</title>
+<meta name="description" content="Maquillage Beauty in Victory Gardens, Arima. Lashes, brows, makeup, waxing and non-invasive body treatments. Book your appointment today.">
+<style>
+  :root{
+    --black:#000000;
+    --ink:#1d1d1f;
+    --white:#fbfbfd;
+    --grey:#86868b;
+    --line:rgba(255,255,255,.12);
+    --line-dark:rgba(0,0,0,.08);
+    --pink:#ff2d8a;
+    --pink-soft:#ffb3d4;
+    --pink-deep:#c4136b;
+    --radius:22px;
+    --font:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Segoe UI",Inter,Helvetica,Arial,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font);background:var(--black);color:#f5f5f7;-webkit-font-smoothing:antialiased;line-height:1.5}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+
+  /* ---------- Nav ---------- */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px);
+    background:rgba(0,0,0,.72);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:1024px;margin:0 auto;padding:0 22px;
+    height:52px;display:flex;align-items:center;justify-content:space-between;
+  }
+  .brand{font-size:17px;font-weight:600;letter-spacing:.01em}
+  .brand em{font-style:normal;color:var(--pink)}
+  .nav-links{display:flex;gap:30px;align-items:center;font-size:13px;color:#d2d2d7}
+  .nav-links a{opacity:.85;transition:opacity .2s,color .2s}
+  .nav-links a:hover{opacity:1;color:#fff}
+  .nav-book{
+    background:var(--pink);color:#fff;padding:6px 16px;border-radius:980px;
+    font-size:13px;font-weight:500;opacity:1 !important;transition:background .2s;
+  }
+  .nav-book:hover{background:var(--pink-deep);color:#fff}
+  .menu-btn{display:none;background:none;border:0;color:#fff;font-size:24px;cursor:pointer;line-height:1}
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-block;border-radius:980px;font-size:17px;font-weight:500;
+    padding:12px 28px;transition:transform .2s,background .2s,box-shadow .2s;cursor:pointer;
+  }
+  .btn-pink{background:var(--pink);color:#fff}
+  .btn-pink:hover{background:var(--pink-deep);transform:scale(1.02)}
+  .btn-ghost{border:1px solid var(--pink);color:var(--pink)}
+  .btn-ghost:hover{background:var(--pink);color:#fff}
+  .btn-sm{font-size:14px;padding:8px 20px}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:120px 22px 80px;position:relative;overflow:hidden;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:auto -20% -55% -20%;height:90%;
+    background:radial-gradient(ellipse at center,rgba(255,45,138,.28),transparent 65%);
+    pointer-events:none;
+  }
+  .hero .eyebrow{
+    font-size:14px;letter-spacing:.28em;text-transform:uppercase;color:var(--pink-soft);
+    margin-bottom:18px;font-weight:500;
+  }
+  .hero h1{
+    font-size:clamp(48px,9vw,96px);font-weight:700;letter-spacing:-.02em;line-height:1.03;
+    background:linear-gradient(135deg,#ffffff 30%,var(--pink-soft) 55%,var(--pink) 80%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    max-width:900px;
+  }
+  .hero p.sub{
+    margin-top:22px;font-size:clamp(19px,2.4vw,26px);color:#d2d2d7;font-weight:400;max-width:640px;
+  }
+  .hero-cta{margin-top:36px;display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
+  .hero-stats{
+    margin-top:64px;display:flex;gap:48px;flex-wrap:wrap;justify-content:center;
+    color:#a1a1a6;font-size:14px;
+  }
+  .hero-stats strong{display:block;font-size:26px;color:#fff;font-weight:600;letter-spacing:-.01em}
+  .hero-stats span.star{color:var(--pink)}
+
+  /* ---------- Sections ---------- */
+  section{padding:110px 22px}
+  .container{max-width:1024px;margin:0 auto}
+  .section-head{text-align:center;margin-bottom:64px}
+  .section-head h2{
+    font-size:clamp(34px,5vw,56px);font-weight:700;letter-spacing:-.02em;line-height:1.08;
+  }
+  .section-head p{margin-top:14px;font-size:19px;color:var(--grey);max-width:600px;margin-left:auto;margin-right:auto}
+  .light{background:var(--white);color:var(--ink)}
+  .light .section-head p{color:#6e6e73}
+
+  /* ---------- Services ---------- */
+  .svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+  .svc-card{
+    background:#fff;border-radius:var(--radius);padding:34px 30px;
+    box-shadow:0 2px 14px rgba(0,0,0,.05);display:flex;flex-direction:column;
+    transition:transform .3s,box-shadow .3s;
+  }
+  .svc-card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(196,19,107,.12)}
+  .svc-icon{
+    width:46px;height:46px;border-radius:14px;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(135deg,var(--pink),var(--pink-deep));margin-bottom:20px;
+  }
+  .svc-icon svg{width:24px;height:24px;stroke:#fff;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .svc-card h3{font-size:22px;font-weight:600;letter-spacing:-.01em;margin-bottom:14px;color:var(--ink)}
+  .svc-list{list-style:none;flex:1;margin-bottom:22px}
+  .svc-list li{
+    display:flex;justify-content:space-between;gap:12px;padding:9px 0;
+    border-bottom:1px solid var(--line-dark);font-size:14.5px;color:#3c3c43;
+  }
+  .svc-list li:last-child{border-bottom:0}
+  .svc-list .price{color:var(--pink-deep);font-weight:600;white-space:nowrap}
+  .svc-list a.menu-link{transition:color .2s}
+  .svc-list a.menu-link:hover{color:var(--pink);text-decoration:underline;text-underline-offset:3px}
+  .svc-card .btn{align-self:flex-start}
+
+  /* ---------- Portfolio ---------- */
+  .portfolio{background:var(--black)}
+  .pf-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+  .pf-item{
+    position:relative;aspect-ratio:1/1;border-radius:var(--radius);overflow:hidden;cursor:pointer;
+  }
+  .pf-item .ph{
+    position:absolute;inset:0;transition:transform .5s ease;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .pf-item img{
+    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+    transition:transform .5s ease;
+  }
+  .pf-item:hover .ph,.pf-item:hover img{transform:scale(1.06)}
+  .about-photo{
+    width:100%;border-radius:var(--radius);margin-bottom:64px;overflow:hidden;
+    box-shadow:0 24px 60px rgba(0,0,0,.15);
+  }
+  .about-photo img{width:100%;height:clamp(260px,45vw,460px);object-fit:cover}
+  .pf-item .ph svg{width:54px;height:54px;stroke:rgba(255,255,255,.85);fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+  .pf-item .label{
+    position:absolute;left:0;right:0;bottom:0;padding:40px 20px 18px;
+    background:linear-gradient(transparent,rgba(0,0,0,.75));
+    font-size:15px;font-weight:500;color:#fff;letter-spacing:.01em;
+  }
+  .g1{background:linear-gradient(135deg,#3a0d24,#ff2d8a)}
+  .g2{background:linear-gradient(135deg,#1a1a1a,#c4136b)}
+  .g3{background:linear-gradient(135deg,#ff77b5,#5a0f37)}
+  .g4{background:linear-gradient(135deg,#2b0716,#ff5ca3)}
+  .g5{background:linear-gradient(135deg,#131313,#ff2d8a 130%)}
+  .g6{background:linear-gradient(135deg,#7a1247,#ffb3d4)}
+  .pf-note{text-align:center;margin-top:28px;color:var(--grey);font-size:14px}
+
+  /* ---------- About ---------- */
+  .about-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center}
+  .about-wrap h2{font-size:clamp(32px,4.5vw,48px);font-weight:700;letter-spacing:-.02em;line-height:1.1;margin-bottom:22px}
+  .about-wrap h2 em{font-style:normal;color:var(--pink)}
+  .about-wrap p{color:#6e6e73;font-size:17px;margin-bottom:16px}
+  .badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+  .badge{
+    font-size:13px;font-weight:500;padding:7px 15px;border-radius:980px;
+    background:rgba(255,45,138,.09);color:var(--pink-deep);border:1px solid rgba(255,45,138,.25);
+  }
+  .hours-card{
+    background:var(--black);color:#f5f5f7;border-radius:var(--radius);padding:38px 34px;
+    box-shadow:0 20px 50px rgba(0,0,0,.18);
+  }
+  .hours-card h3{font-size:20px;font-weight:600;margin-bottom:20px}
+  .hours-card h3 span{color:var(--pink)}
+  .hours-row{
+    display:flex;justify-content:space-between;padding:10px 0;font-size:14.5px;
+    border-bottom:1px solid var(--line);color:#d2d2d7;
+  }
+  .hours-row:last-of-type{border-bottom:0}
+  .hours-row .closed{color:var(--grey)}
+  .hours-card .loc{margin-top:22px;font-size:14px;color:#a1a1a6;display:flex;gap:8px;align-items:flex-start}
+  .hours-card .loc svg{width:16px;height:16px;stroke:var(--pink);fill:none;stroke-width:1.8;flex-shrink:0;margin-top:2px}
+
+  /* ---------- CTA band ---------- */
+  .cta-band{
+    text-align:center;position:relative;overflow:hidden;background:var(--black);
+  }
+  .cta-band::before{
+    content:"";position:absolute;inset:-40% -20% auto -20%;height:120%;
+    background:radial-gradient(ellipse at top,rgba(255,45,138,.22),transparent 60%);
+    pointer-events:none;
+  }
+  .cta-band h2{
+    font-size:clamp(36px,6vw,64px);font-weight:700;letter-spacing:-.02em;line-height:1.05;
+    background:linear-gradient(135deg,#fff 40%,var(--pink) 90%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    position:relative;
+  }
+  .cta-band p{margin:18px auto 34px;color:#a1a1a6;font-size:19px;max-width:520px;position:relative}
+  .cta-band .btn{position:relative}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--black);border-top:1px solid var(--line);padding:44px 22px;color:var(--grey);font-size:13px}
+  .foot-inner{max-width:1024px;margin:0 auto;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+  .foot-inner a:hover{color:#fff}
+
+  /* ---------- Reveal on scroll ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    html{scroll-behavior:auto}
+  }
+
+  /* ---------- Mobile ---------- */
+  @media (max-width:820px){
+    .nav-links{
+      position:fixed;top:52px;right:0;left:0;flex-direction:column;gap:0;
+      background:rgba(0,0,0,.95);backdrop-filter:blur(20px);
+      max-height:0;overflow:hidden;transition:max-height .35s ease;
+    }
+    .nav-links.open{max-height:340px;border-bottom:1px solid var(--line)}
+    .nav-links a{padding:16px 22px;width:100%;text-align:left;font-size:16px}
+    .nav-book{border-radius:0;background:var(--pink)}
+    .menu-btn{display:block}
+    .about-wrap{grid-template-columns:1fr;gap:40px}
+    section{padding:80px 20px}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="brand" href="#top">Maquillage <em>Beauty</em></a>
+    <button class="menu-btn" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#about">About</a>
+      <a href="#visit">Visit</a>
+      <a class="nav-book" href="https://www.fresha.com/en-GB/a/maquillage-beauty-arima-victory-gardens-ano6tem1/booking?menu=true&amp;pId=231247&amp;share=true&amp;cartId=8716862e-8672-4fc8-b292-bf1f0c95076a" target="_blank" rel="noopener">Book Now</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero" id="top">
+  <p class="eyebrow">Victory Gardens · Arima · Trinidad &amp; Tobago</p>
+  <h1>Beauty, refined.<br>Confidence, unlocked.</h1>
+  <p class="sub">Lashes, brows, makeup and skin — enhanced with precision in a calm, welcoming space designed around you.</p>
+  <div class="hero-cta">
+    <a class="btn btn-pink" href="https://www.fresha.com/en-GB/a/maquillage-beauty-arima-victory-gardens-ano6tem1/booking?menu=true&amp;pId=231247&amp;share=true&amp;cartId=8716862e-8672-4fc8-b292-bf1f0c95076a" target="_blank" rel="noopener">Book an Appointment</a>
+    <a class="btn btn-ghost" href="#services">Explore Services</a>
+  </div>
+  <div class="hero-stats">
+    <div><strong><span class="star">★</span> 5.0</strong>Client rating</div>
+    <div><strong>221+</strong>Five-star reviews</div>
+    <div><strong>Women-led</strong>Black-owned studio</div>
+  </div>
+</header>
+
+<!-- Services -->
+<section class="light" id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Services made for you.</h2>
+      <p>Every treatment is personalized to your features. Tap Book to reserve your spot instantly.</p>
+    </div>
+    <div class="svc-grid">
+
+      <div class="svc-card reveal">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M2 12c3.5-5 6.5-7 10-7s6.5 2 10 7c-3.5 5-6.5 7-10 7s-6.5-2-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3>Individual Lash Extensions</h3>
+        <ul class="svc-list">
+          <li>Textured Classic / Wet Lashes <span class="price">From TTD 375</span></li>
+          <li>Hybrid / Volume <span class="price">From TTD 375</span></li>
+          <li>Refills <span class="price">From TTD 150</span></li>
+        </ul>
+        <a class="btn btn-pink btn-sm book-link" href="#" target="_blank" rel="noopener">Book</a>
+      </div>
+
+      <div class="svc-card reveal">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M3 13c3-4.5 6-6 9-6s6 1.5 9 6"/><path d="M6 13l-1 3M10 14l-.5 3.5M14 14l.5 3.5M18 13l1 3"/></svg></div>
+        <h3>Cluster Lashes</h3>
+        <ul class="svc-list">
+          <li>Cluster Lash Sets <a class="price menu-link book-link" href="#" target="_blank" rel="noopener">View menu ↗</a></li>
+          <li>Cluster Lash Removal <span class="price">TTD 30</span></li>
+        </ul>
+        <a class="btn btn-pink btn-sm book-link" href="#" target="_blank" rel="noopener">Book</a>
+      </div>
+
+      <div class="svc-card reveal">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M4 15c4-6 12-6 16 0"/><path d="M4 15c1.5-1.2 3-1.8 4.5-1.8"/></svg></div>
+        <h3>Semi Permanent Eyebrows &amp; Permanent Makeup</h3>
+        <ul class="svc-list">
+          <li>Semi Permanent Eyebrows <a class="price menu-link book-link" href="#" target="_blank" rel="noopener">View menu ↗</a></li>
+          <li>Boost Color (Existing Clients) <span class="price">TTD 1,000</span></li>
+          <li>Permanent Makeup <a class="price menu-link book-link" href="#" target="_blank" rel="noopener">View menu ↗</a></li>
+        </ul>
+        <a class="btn btn-pink btn-sm book-link" href="#" target="_blank" rel="noopener">Book</a>
+      </div>
+
+      <div class="svc-card reveal">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M14.5 3.5l6 6L8 22l-6 .5.5-6z"/><path d="M12 6l6 6"/></svg></div>
+        <h3>Makeup</h3>
+        <ul class="svc-list">
+          <li>Bridal Makeup <span class="price">TTD 450</span></li>
+          <li>Soft Glam <span class="price">TTD 250</span></li>
+        </ul>
+        <a class="btn btn-pink btn-sm book-link" href="#" target="_blank" rel="noopener">Book</a>
+      </div>
+
+      <div class="svc-card reveal">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 3c3 4 5 7 5 10a5 5 0 0 1-10 0c0-3 2-6 5-10z"/></svg></div>
+        <h3>Waxing Services</h3>
+        <ul class="svc-list">
+          <li>Eyebrow Wax <span class="price">TTD 50</span></li>
+          <li>Full Body &amp; Hollywood Waxing <a class="price menu-link book-link" href="#" target="_blank" rel="noopener">View menu ↗</a></li>
+        </ul>
+        <a class="btn btn-pink btn-sm book-link" href="#" target="_blank" rel="noopener">Book</a>
+      </div>
+
+      <div class="svc-card reveal">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 13c1.2 1.5 2.6 2.2 4 2.2s2.8-.7 4-2.2"/></svg></div>
+        <h3>Non-Invasive Treatments</h3>
+        <ul class="svc-list">
+          <li>Skin Enhancement <a class="price menu-link book-link" href="#" target="_blank" rel="noopener">View menu ↗</a></li>
+          <li>Breast Lift <a class="price menu-link book-link" href="#" target="_blank" rel="noopener">View menu ↗</a></li>
+          <li>Bess Body Package <a class="price menu-link book-link" href="#" target="_blank" rel="noopener">View menu ↗</a></li>
+          <li>Smoother Skin Package <a class="price menu-link book-link" href="#" target="_blank" rel="noopener">View menu ↗</a></li>
+          <li>Combo Deals <a class="price menu-link book-link" href="#" target="_blank" rel="noopener">View menu ↗</a></li>
+        </ul>
+        <a class="btn btn-pink btn-sm book-link" href="#" target="_blank" rel="noopener">Book</a>
+      </div>
+
+      <div class="svc-card reveal">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.5-9A5.5 5.5 0 0 1 12 6.5 5.5 5.5 0 0 1 21.5 12C19 16.4 12 21 12 21z"/></svg></div>
+        <h3>Consultation</h3>
+        <ul class="svc-list">
+          <li>Beauty Consultation <a class="price menu-link book-link" href="#" target="_blank" rel="noopener">View menu ↗</a></li>
+          <li>Personalized Treatment Planning <a class="price menu-link book-link" href="#" target="_blank" rel="noopener">View menu ↗</a></li>
+        </ul>
+        <a class="btn btn-pink btn-sm book-link" href="#" target="_blank" rel="noopener">Book</a>
+      </div>
+
+    </div>
+    <p class="pf-note" style="color:#6e6e73">52 services available in total — see the full menu with live pricing on the booking page.</p>
+  </div>
+</section>
+
+<!-- Portfolio -->
+<section class="portfolio" id="portfolio">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>The work speaks.</h2>
+      <p>A glimpse of the transformations our clients wake up flawless with.</p>
+    </div>
+    <div class="pf-grid">
+      <div class="pf-item reveal"><div class="ph g1"><svg viewBox="0 0 24 24"><path d="M4 15c4-6 12-6 16 0"/></svg></div><img src="https://images.fresha.com/partner-portfolios/providers/231247/4b0d1940-6019-465f-8807-03acd9d8b185.jpeg?class=square512&amp;dpr=1&amp;keyId=rl8WOyy9WOMLne9A&amp;signature=1qfGdl9ETnmYSGJD/Xf3cApd4hE&amp;f_width=1920&amp;f_quality=75" alt="Perfectly shaped ombré brows by Maquillage Beauty" loading="lazy" onerror="this.remove()"><div class="label">Ombré Brows</div></div>
+      <div class="pf-item reveal"><div class="ph g2"><svg viewBox="0 0 24 24"><path d="M2 12c3.5-5 6.5-7 10-7s6.5 2 10 7c-3.5 5-6.5 7-10 7s-6.5-2-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div><img src="https://images.fresha.com/partner-portfolios/providers/231247/87b6c12a-94b0-45f4-bc81-18eed898e636.jpeg?class=square512&amp;dpr=1&amp;keyId=rl8WOyy9WOMLne9A&amp;signature=NM6DBmCnj+uAzfCJZVz0PaWPDPM&amp;f_width=1920&amp;f_quality=75" alt="Dramatic voluminous lash extensions by Maquillage Beauty" loading="lazy" onerror="this.remove()"><div class="label">Volume Lash Extensions</div></div>
+      <div class="pf-item reveal"><div class="ph g3"><svg viewBox="0 0 24 24"><path d="M14.5 3.5l6 6L8 22l-6 .5.5-6z"/></svg></div><img src="https://images.fresha.com/partner-portfolios/providers/231247/6474e34e-4e63-4f97-a569-8760a6b9186c.jpeg?class=square512&amp;dpr=1&amp;keyId=rl8WOyy9WOMLne9A&amp;signature=4rYh0KxFuoIWjefV/+QubTbKA3M&amp;f_width=1920&amp;f_quality=75" alt="Vibrant full glam makeup look by Maquillage Beauty" loading="lazy" onerror="this.remove()"><div class="label">Full Glam Makeup</div></div>
+      <div class="pf-item reveal"><div class="ph g4"><svg viewBox="0 0 24 24"><path d="M12 3c3 4 5 7 5 10a5 5 0 0 1-10 0c0-3 2-6 5-10z"/></svg></div><img src="https://images.fresha.com/partner-portfolios/providers/231247/67ac3c63-e8d0-499b-a7b8-2bc3c69cb457.jpeg?class=square512&amp;dpr=1&amp;keyId=rl8WOyy9WOMLne9A&amp;signature=YYZp8BWBc0AU+jNlEBnPZP9eodc&amp;f_width=1920&amp;f_quality=75" alt="Smooth skin after a Hollywood wax at Maquillage Beauty" loading="lazy" onerror="this.remove()"><div class="label">Hollywood Wax</div></div>
+      <div class="pf-item reveal"><div class="ph g5"><svg viewBox="0 0 24 24"><path d="M3 13c3-4.5 6-6 9-6s6 1.5 9 6"/></svg></div><img src="https://images.fresha.com/locations/location-profile-images/231247/5713787/d2894b0d-b812-461f-a290-e60b7bab8fe0-MaquillageBeauty-TT-ArimaBoroughCorporation-Arima-Fresha.jpg?class=venue-gallery-small&amp;f_width=1920&amp;f_quality=75" alt="Beautifully enhanced lashes at Maquillage Beauty" loading="lazy" onerror="this.remove()"><div class="label">Enhanced Lashes</div></div>
+      <div class="pf-item reveal"><div class="ph g6"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.5-9A5.5 5.5 0 0 1 12 6.5 5.5 5.5 0 0 1 21.5 12C19 16.4 12 21 12 21z"/></svg></div><img src="https://images.fresha.com/locations/location-profile-images/231247/5713788/5e6b4cb8-3f41-4402-b11f-16d535a5ba8f-MaquillageBeauty-TT-ArimaBoroughCorporation-Arima-Fresha.jpg?class=venue-gallery-small&amp;f_width=1920&amp;f_quality=75" alt="Perfectly groomed eyelashes at Maquillage Beauty" loading="lazy" onerror="this.remove()"><div class="label">Classic Lash Set</div></div>
+    </div>
+    <p class="pf-note">Real client work by Maquillage Beauty — see all 14 portfolio pieces on the booking page.</p>
+  </div>
+</section>
+
+<!-- About + Hours -->
+<section class="light" id="about">
+  <div class="container">
+    <div class="about-photo reveal">
+      <img src="https://images.fresha.com/locations/location-profile-images/231247/5713786/41d05a40-9e32-4a6c-b9d8-9bfc9342c1b4-MaquillageBeauty-TT-ArimaBoroughCorporation-Arima-Fresha.jpg?class=og-image" alt="Inside the Maquillage Beauty studio" loading="lazy" onerror="this.parentElement.remove()">
+    </div>
+  </div>
+  <div class="container about-wrap">
+    <div class="reveal">
+      <h2>Your premier destination for <em>natural beauty.</em></h2>
+      <p>At Maquillage Beauty, we help you feel confident and radiant by enhancing your natural features in a calm, welcoming space.</p>
+      <p>We specialize in eyebrow tinting, semi-permanent makeup, henna brows, eyelash extensions, waxing, non-invasive body contouring and more — alongside high-quality skincare products to keep your skin glowing between visits.</p>
+      <div class="badges">
+        <span class="badge">★ 5.0 Rated</span>
+        <span class="badge">Instant Confirmation</span>
+        <span class="badge">Women Only</span>
+        <span class="badge">Black-Owned</span>
+        <span class="badge">Woman-Owned</span>
+        <span class="badge">Parking Available</span>
+      </div>
+    </div>
+    <div class="hours-card reveal" id="visit">
+      <h3>Opening <span>Hours</span></h3>
+      <div class="hours-row"><span>Monday</span><span class="closed">Closed</span></div>
+      <div class="hours-row"><span>Tuesday</span><span>9:00 AM – 6:00 PM</span></div>
+      <div class="hours-row"><span>Wednesday</span><span>9:00 AM – 6:00 PM</span></div>
+      <div class="hours-row"><span>Thursday</span><span>9:00 AM – 6:00 PM</span></div>
+      <div class="hours-row"><span>Friday</span><span>9:00 AM – 6:00 PM</span></div>
+      <div class="hours-row"><span>Saturday</span><span>9:00 AM – 6:00 PM</span></div>
+      <div class="hours-row"><span>Sunday</span><span>12:00 PM – 6:00 PM</span></div>
+      <p class="loc">
+        <svg viewBox="0 0 24 24"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        Victory Gardens, Dabadie, Arima, Trinidad &amp; Tobago · Closed 12–1 PM Tue–Sat
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <div class="container reveal">
+    <h2>Ready to glow?</h2>
+    <p>Secure your appointment in seconds. Instant confirmation, zero phone tag.</p>
+    <a class="btn btn-pink" href="https://www.fresha.com/en-GB/a/maquillage-beauty-arima-victory-gardens-ano6tem1/booking?menu=true&amp;pId=231247&amp;share=true&amp;cartId=8716862e-8672-4fc8-b292-bf1f0c95076a" target="_blank" rel="noopener">Book Your Appointment</a>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-inner">
+    <div>© <span id="yr"></span> Maquillage Beauty · Victory Gardens, Arima, Trinidad &amp; Tobago</div>
+    <div><a href="https://www.fresha.com/en-GB/a/maquillage-beauty-arima-victory-gardens-ano6tem1/booking?menu=true&amp;pId=231247&amp;share=true&amp;cartId=8716862e-8672-4fc8-b292-bf1f0c95076a" target="_blank" rel="noopener">Book on Fresha ↗</a></div>
+  </div>
+</footer>
+
+<script>
+  const BOOKING_URL = "https://www.fresha.com/en-GB/a/maquillage-beauty-arima-victory-gardens-ano6tem1/booking?menu=true&pId=231247&share=true&cartId=8716862e-8672-4fc8-b292-bf1f0c95076a";
+
+  // Point every service Book button at the Fresha booking page (opens in a new tab)
+  document.querySelectorAll(".book-link").forEach(a => a.href = BOOKING_URL);
+
+  // Close mobile menu after tapping a link
+  document.querySelectorAll(".nav-links a").forEach(a =>
+    a.addEventListener("click", () => document.querySelector(".nav-links").classList.remove("open"))
+  );
+
+  // Scroll reveal
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+
+  document.getElementById("yr").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
